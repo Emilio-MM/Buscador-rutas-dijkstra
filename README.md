@@ -1,4 +1,4 @@
-# Sistema de Navegación Urbana: Algoritmo de Dijkstra en C
+# Sistema de Navegación Urbana en San Luis Potosí: Algoritmo de Dijkstra en C
 
 Implementación de alto rendimiento del algoritmo de Dijkstra para la optimización de trayectorias y búsqueda del camino más corto en redes urbanas complejas. 
 
