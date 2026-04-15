@@ -6,6 +6,11 @@ El sistema está desarrollado completamente en C estándar, priorizando la efici
 * **Tabla Hash:** Sistema de almacenamiento de nodos con resolución de colisiones mediante sondeo cuadrático y redimensionamiento dinámico de memoria (`realloc`).
 * **Cola de Prioridad (Min-Heap):** Estructura de árbol binario para la extracción en tiempo constante (O(1)) del nodo con la menor distancia acumulada, optimizando las iteraciones del algoritmo.
 
+<div align="center">
+  <img src="Ejemplo-Ruta1-SLP.gif" width="400" />
+</div>
+
+
 ## Requisitos y Tecnologías
 * **Lenguaje:** C (C99 o superior).
 * **Compilador:** GCC, Clang o MSVC.
