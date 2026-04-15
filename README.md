@@ -16,7 +16,7 @@ El sistema está desarrollado completamente en C estándar, priorizando la efici
 Para que el programa se ejecute correctamente, requiere leer un archivo de base de datos de la red vial y generará un archivo de salida con los resultados.
 
 ### Archivo de Entrada Requerido
-El ejecutable debe estar en el mismo directorio que el archivo `aristas_completo.csv`. Este archivo contiene la información del grafo urbano y debe seguir estrictamente este formato (separado por comas):
+El ejecutable debe estar en el mismo directorio que el archivo `mapa.csv`. Este archivo contiene la información del grafo urbano y debe seguir estrictamente este formato (separado por comas):
 `origen,destino,longitud,nombre_calle`
 
 ### Archivo de Salida
