@@ -7,7 +7,7 @@ El sistema está desarrollado completamente en C estándar, priorizando la efici
 * **Cola de Prioridad (Min-Heap):** Estructura de árbol binario para la extracción en tiempo constante (O(1)) del nodo con la menor distancia acumulada, optimizando las iteraciones del algoritmo.
 
 <div align="center">
-  <img src="Ejemplo-Ruta1-SLP.gif" width="400" />
+  <img src="Ejemplo-Ruta1-SLP.png" width="400" />
 </div>
 
 
