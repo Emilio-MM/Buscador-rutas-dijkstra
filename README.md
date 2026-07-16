@@ -1,49 +1,51 @@
-# Sistema de Navegación Urbana en San Luis Potosí: Algoritmo de Dijkstra en C
+# Urban Navigation System in San Luis Potosí: Dijkstra's Algorithm in C
 
-Implementación de alto rendimiento del algoritmo de Dijkstra para la optimización de trayectorias y búsqueda del camino más corto en redes urbanas complejas. 
+High-performance implementation of Dijkstra's algorithm for trajectory optimization and shortest path finding in complex urban networks. 
 
-El sistema está desarrollado completamente en C estándar, priorizando la eficiencia computacional y el manejo manual de memoria. Para maximizar la velocidad de búsqueda y reducir los tiempos de ejecución, el motor prescinde de librerías externas de estructuras de datos e implementa desde cero:
-* **Tabla Hash:** Sistema de almacenamiento de nodos con resolución de colisiones mediante sondeo cuadrático y redimensionamiento dinámico de memoria (`realloc`).
-* **Cola de Prioridad (Min-Heap):** Estructura de árbol binario para la extracción en tiempo constante (O(1)) del nodo con la menor distancia acumulada, optimizando las iteraciones del algoritmo.
+The system is developed entirely in standard C, prioritizing computational efficiency and manual memory management. To maximize search speed and reduce execution times, the engine avoids external data structure libraries and implements the following from scratch:
+* **Hash Table:** Node storage system with collision resolution via quadratic probing and dynamic memory resizing (`realloc`).
+* **Priority Queue (Min-Heap):** Binary tree structure for constant-time retrieval (O(1)) of the node with the lowest accumulated distance, optimizing the algorithm's iterations.
 
 <div align="center">
   <img src="Ejemplo-Ruta1-SLP.png" width="400" />
 </div>
 
+## Requirements and Technologies
+* **Language:** C (C99 or higher).
+* **Compiler:** GCC, Clang, or MSVC.
+* **Libraries:** Standard C Library (`stdio.h`, `stdlib.h`, `string.h`, `stdint.h`, `time.h`, `stdbool.h`). No external dependencies required.
 
-## Requisitos y Tecnologías
-* **Lenguaje:** C (C99 o superior).
-* **Compilador:** GCC, Clang o MSVC.
-* **Librerías:** Estándar de C (`stdio.h`, `stdlib.h`, `string.h`, `stdint.h`, `time.h`, `stdbool.h`). No se requieren dependencias externas.
+## Data Structures & I/O Files
 
-## Estructura de Datos (Archivos I/O)
+For the program to run correctly, it requires reading a road network database file and will generate an output file with the results.
 
-Para que el programa se ejecute correctamente, requiere leer un archivo de base de datos de la red vial y generará un archivo de salida con los resultados.
-
-### Archivo de Entrada Requerido
-El ejecutable debe estar en el mismo directorio que el archivo `mapa.csv`. Este archivo contiene la información del grafo urbano y debe seguir estrictamente este formato (separado por comas):
+### Required Input File
+The executable must be in the same directory as the `Mapa.csv` file. This file contains the urban graph information and must strictly follow this format (comma-separated):
 `origen,destino,longitud,nombre_calle`
 
-### Archivo de Salida
-Una vez calculado el camino más corto, el sistema genera automáticamente un archivo llamado `camino.csv` que contiene:
-1. El nodo de origen y destino junto con el nombre de las calles.
-2. La secuencia completa de IDs de los nodos que conforman la ruta óptima.
+### Output File
+Once the shortest path is calculated, the system automatically generates a file named `camino.csv` containing:
+1. The source and destination nodes along with the street names.
+2. The complete sequence of node IDs that make up the optimal route.
 
-## Instrucciones de Compilación y Uso
+## Compilation and Usage Instructions
 
-1. Abre una terminal en el directorio del proyecto.
-2. Compila el código fuente utilizando GCC (o tu compilador de preferencia):
-   `gcc main.c -o dijkstra_nav`
-3. Ejecuta el programa compilado:
-   * En Windows: `dijkstra_nav.exe`
-   * En Linux/Mac: `./dijkstra_nav`
+1. Open a terminal in the project directory.
+2. Compile the source code using GCC (or your preferred compiler):
+   `gcc Dijkstra.c -o dijkstra_nav`
+3. Run the compiled program:
+   * **Windows:** `dijkstra_nav.exe`
+   * **Linux/Mac:** `./dijkstra_nav`
 
-## Interacción con el Sistema
-Al iniciar, el sistema cargará el archivo CSV, poblará la Tabla Hash y el Min-Heap en memoria, y desplegará una interfaz en consola.
-1. Ingresa el nombre de la calle de **origen**.
-2. Ingresa el nombre de la calle de **destino**.
-3. El sistema calculará la ruta e imprimirá en pantalla:
-   * La distancia total de la ruta en kilómetros.
-   * El tiempo exacto de ejecución del algoritmo.
-   * El tiempo de carga de las estructuras de datos.
-   * La secuencia paso a paso de las calles a tomar.
+## System Interaction
+Upon startup, the system will load the CSV file, populate the Hash Table and Min-Heap in memory, and display a console interface.
+1. Enter the **source** street name.
+2. Enter the **destination** street name.
+3. The system will calculate the route and print to the screen:
+   * The total route distance in kilometers.
+   * The exact execution time of the algorithm.
+   * The load time of the data structures.
+   * The step-by-step sequence of streets to take.
+
+## Visualizing the Route
+The generated `camino.csv` file can be exported to mapping tools or plotting scripts to render the path visually over the city's street network, as shown in the repository's examples.
